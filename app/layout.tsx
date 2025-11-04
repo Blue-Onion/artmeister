@@ -24,7 +24,7 @@ export default function RootLayout({
       <body
         className={`${archivoBlack} antialiased`}
       >
-        <main className="mx-auto container ">
+        <main className="mx-auto container">
 
         {children}
         </main>
