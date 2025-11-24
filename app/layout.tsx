@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Archivo_Black, Inter } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
 });
@@ -12,14 +12,22 @@ const archivoBlack = Archivo_Black({
   variable: "--font-archivo",
 });
 
-
 export const metadata: Metadata = {
   title: {
     default: "Artmeister | Art & Cocktails",
     template: "%s | Artmeister",
   },
-  description: "Join Artmeister, the exclusive art and cocktail club. Experience curated art exhibitions and signature cocktails in a modern, vibrant atmosphere.",
-  keywords: ["art club", "cocktail bar", "art gallery", "modern art", "nightlife", "drinks", "social club"],
+  description:
+    "Join Artmeister, the exclusive art and cocktail club. Experience curated art exhibitions and signature cocktails in a modern, vibrant atmosphere.",
+  keywords: [
+    "art club",
+    "cocktail bar",
+    "art gallery",
+    "modern art",
+    "nightlife",
+    "drinks",
+    "social club",
+  ],
   authors: [{ name: "Artmeister Team" }],
   creator: "Artmeister",
   icons: {
@@ -61,10 +69,7 @@ export default function RootLayout({
       <body
         className={`${archivoBlack.variable} ${inter.variable} antialiased`}
       >
-        <main className="mx-auto bg-white container">
-
-        {children}
-        </main>
+        <main className="">{children}</main>
       </body>
     </html>
   );
