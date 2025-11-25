@@ -5,6 +5,7 @@ import { ScrollTrigger, SplitText } from "gsap/all"
 import { useRef } from "react"
 import { useMediaQuery }
     from "react-responsive"
+import { Button } from "../ui/button"
 
 const Hero = () => {
     const videoRef = useRef(null)
@@ -21,10 +22,16 @@ const Hero = () => {
             type: "lines",
         })
 
-        // Apply text-gradient class once before animating
+
         heroSplit.chars.forEach((char) => char.classList.add("text-gradient"))
 
         gsap.from(heroSplit.chars, {
+            yPercent: 100,
+            duration: 1.8,
+            ease: "expo.out",
+            stagger: 0.06,
+        })
+        gsap.from(paragraphSplit.lines, {
             yPercent: 100,
             duration: 1.8,
             ease: "expo.out",
@@ -60,8 +67,32 @@ const Hero = () => {
 
     return (
         <>
-            <section id='hero'>
-                <h1 className="title text-8xl md:text-[12vw] title  relative z-10">ArtMaster </h1>
+            <section id='hero' className="noisy container mx-auto">
+                <div className="flex flex-col items-center gap-5">
+                    <h1 className="title text-8xl md:text-[12vw] title  relative z-10">ArtMeister </h1>
+                    <div className="buttons flex flex-col md:flex-row gap-5">
+                        <Button variant={"art"} className="bg-black/35">
+                            Explore Collection
+                        </Button>
+                        <Button variant={"art"}>
+                            Pubish Your Art
+                        </Button>
+                    </div>
+                </div>
+                <div className="body w-full ">
+
+
+                    <div className="content">
+                        <div className="space-y-5 hidden md:block">
+                            <p>Curated. Timeless. Unique.</p>
+                            <p className="subtitle  font-bold">
+                                Discover the <br />  Soul of <br /> Creativity
+                            </p>
+                        </div>
+
+
+                    </div>
+                </div>
             </section>
             <div className="video absolute inset-0 w-full h-full z-[-1]">
                 <video
